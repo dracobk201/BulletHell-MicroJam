@@ -24,7 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Destroy()
     {
         transform.localScale = Vector3.one;
-        LeanTween.scale(gameObject, Vector3.zero, 1f)
+        LeanTween.scale(gameObject, Vector3.zero, 0.5f)
             .setOnStart(() => _enemyCollider.enabled = false)
             .setEase(LeanTweenType.easeInExpo)
             .setOnComplete(() => gameObject.SetActive(false));
@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         string targetTag = other.tag;
-        if (targetTag.Equals(Global.PlayerBulletTag))
+        if (targetTag.Equals(Global.PlayerBulletTag) || targetTag.Equals(Global.PlayerTag))
         {
             enemiesKilled.Value++;
             Destroy();

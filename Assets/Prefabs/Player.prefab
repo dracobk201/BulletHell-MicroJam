@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 198430032967500616}
   - component: {fileID: 198430032967500622}
   - component: {fileID: 8865183664089949327}
+  - component: {fileID: 4386641210086109277}
   - component: {fileID: 198430032967500621}
   - component: {fileID: 1994111532899442300}
   - component: {fileID: 7498673806691400656}
@@ -61,10 +62,6 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 8176babd21e4e3d42a1132eadcf73237, type: 2}
-  damping:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: b2bc9205cf1ad20479b9ddc068c04a4c, type: 2}
   transformToRotate: {fileID: 599903399812542865}
 --- !u!114 &8865183664089949327
 MonoBehaviour:
@@ -81,6 +78,28 @@ MonoBehaviour:
   playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
   playerShot: {fileID: 11400000, guid: 9aeab12bd0e79b64a83b6ca3db2ee092, type: 2}
   bulletInitialTransform: {fileID: 3169685488351796700}
+--- !u!114 &4386641210086109277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198430032967500620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d7681613c38d2468cdad7c186added, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMaxLife:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: a8cc551ccc36cfc4ca77aad25b797ece, type: 2}
+  playerActualLife:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: c660787b18bff49479e2659e648abdc0, type: 2}
+  playerImpacted: {fileID: 11400000, guid: 4d6157130ee3b5f4eae1e974d16cf6b3, type: 2}
+  playerDead: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
 --- !u!114 &198430032967500621
 MonoBehaviour:
   m_ObjectHideFlags: 0
