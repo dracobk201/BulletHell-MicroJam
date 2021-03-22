@@ -31,6 +31,7 @@ public class ControlController : MonoBehaviour
     {
         CheckingVerticalMovementAxis();
         CheckingHorizontalMovementAxis();
+        CheckingNonMovementAxis();
         CheckingMouseAxis();
         CheckingFireButton();
     }
@@ -113,6 +114,12 @@ public class ControlController : MonoBehaviour
     }
 
     #endregion
+
+    private void CheckingNonMovementAxis()
+    {
+        if (_isVerticalMovementAxisInUse && _isHorizontalMovementAxisInUse)
+            nonMovementAxisEvent.Raise();
+    }
 
     private void CheckingFireButton()
     {

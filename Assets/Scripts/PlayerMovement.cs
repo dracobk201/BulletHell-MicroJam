@@ -7,13 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2Reference movementAxis = default(Vector2Reference);
     [SerializeField] private Vector3Reference cameraAxis = default(Vector3Reference);
     [SerializeField] private FloatReference playerMoveSpeed = default(FloatReference);
-    [SerializeField] private FloatReference damping = default(FloatReference);
     [SerializeField] private Transform transformToRotate = default(Transform);
-    private Camera gameCamera;
+    private Camera _gameCamera;
 
     private void Awake()
     {
-        gameCamera = Camera.main;
+        _gameCamera = Camera.main;
     }
 
     public void Move()
@@ -26,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rotate()
     {
-        Vector3 mouseWorld = gameCamera.ScreenToWorldPoint(cameraAxis.Value);
+        Vector3 mouseWorld = _gameCamera.ScreenToWorldPoint(cameraAxis.Value);
         transformToRotate.up = new Vector2(mouseWorld.x, mouseWorld.y) - new Vector2(transform.position.x, transform.position.y);
     }
 }

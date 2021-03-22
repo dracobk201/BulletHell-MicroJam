@@ -29,13 +29,18 @@ public class Bullet : MonoBehaviour
         Destroy();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         string targetTag = other.tag;
-        Destroy();
         if (targetTag.Equals(Global.EnemyTag) && gameObject.tag.Equals(Global.PlayerBulletTag))
+        {
+            Destroy();
             enemyImpacted.Raise();
+        }
         else if (targetTag.Equals(Global.PlayerTag) && gameObject.tag.Equals(Global.EnemyBulletTag))
+        {
+            Destroy();
             playerImpacted.Raise();
+        }
     }
 }
