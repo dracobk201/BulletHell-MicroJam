@@ -12,11 +12,9 @@ public class ControlController : MonoBehaviour
     private bool _isHorizontalMovementAxisInUse;
 
     [Header("Camera Variables")]
-    [SerializeField] private Vector2Reference cameraAxis = default(Vector2Reference);
+    [SerializeField] private Vector3Reference cameraAxis = default(Vector3Reference);
     [SerializeField] private GameEvent anyCameraAxisEvent = default(GameEvent);
     [SerializeField] private GameEvent nonCameraAxisEvent = default(GameEvent);
-    private bool _isVerticalCameraAxisInUse;
-    private bool _isHorizontalCameraAxisInUse;
 
     [Header("Buttons Variables")]
     [SerializeField] private IntReference framesToWait = default(IntReference);
@@ -33,10 +31,7 @@ public class ControlController : MonoBehaviour
     {
         CheckingVerticalMovementAxis();
         CheckingHorizontalMovementAxis();
-        CheckingNonMovementAxis();
-        CheckingMouseVerticalAxis();
-        CheckingHorizontalCameraAxis();
-        CheckingNonCameraAxis();
+        CheckingMouseAxis();
         CheckingFireButton();
     }
 
@@ -92,71 +87,32 @@ public class ControlController : MonoBehaviour
 
     #endregion
 
-    #region Vertical Camera Actions
+    #region Camera Actions
 
-    private void CheckingMouseVerticalAxis()
+    private void CheckingMouseAxis()
     {
         var mouseVerticalValue = Input.GetAxis(Global.MouseVerticalAxis);
-
-        if ((Math.Abs(mouseVerticalValue) > Global.Tolerance) && !_isVerticalCameraAxisInUse)
-            PerformVerticalCameraActions(mouseVerticalValue);
-        else
-            NoMouseVerticalCameraActions();
-    }
-
-    private void PerformVerticalCameraActions(float value)
-    {
-        _isVerticalCameraAxisInUse = true;
-        cameraAxis.Value = new Vector2(cameraAxis.Value.x, value);
-        anyCameraAxisEvent.Raise();
-    }
-
-    private void NoMouseVerticalCameraActions()
-    {
-        _isVerticalCameraAxisInUse = false;
-        cameraAxis.Value = new Vector2(cameraAxis.Value.x, 0);
-    }
-
-    #endregion
-
-    #region Horizontal Camera Actions
-
-    private void CheckingHorizontalCameraAxis()
-    {
         var horizontalCameraValue = Input.GetAxis(Global.MouseVerticalAxis);
 
-        if ((Math.Abs(horizontalCameraValue) > Global.Tolerance) && !_isVerticalCameraAxisInUse)
-            PerformHorizontalCameraActions(horizontalCameraValue);
+        if (Math.Abs(mouseVerticalValue) > Global.Tolerance || Math.Abs(horizontalCameraValue) > Global.Tolerance)
+            PerformCameraActions();
         else
-            NoHorizontalCameraActions();
+            NoCameraActions();
     }
 
-    private void PerformHorizontalCameraActions(float value)
+    private void PerformCameraActions()
     {
-        _isVerticalCameraAxisInUse = true;
-        cameraAxis.Value = new Vector2(cameraAxis.Value.x, value);
+        cameraAxis.Value = Input.mousePosition;
         anyCameraAxisEvent.Raise();
     }
 
-    private void NoHorizontalCameraActions()
+    private void NoCameraActions()
     {
-        _isVerticalCameraAxisInUse = false;
-        cameraAxis.Value = new Vector2(cameraAxis.Value.x, 0);
+        cameraAxis.Value = new Vector2(0, 0);
+        nonCameraAxisEvent.Raise();
     }
 
     #endregion
-
-    private void CheckingNonMovementAxis()
-    {
-        if (_isVerticalMovementAxisInUse && _isHorizontalMovementAxisInUse)
-            nonMovementAxisEvent.Raise();
-    }
-
-    private void CheckingNonCameraAxis()
-    {
-        if (_isVerticalCameraAxisInUse && _isHorizontalCameraAxisInUse)
-            nonCameraAxisEvent.Raise();
-    }
 
     private void CheckingFireButton()
     {
@@ -169,11 +125,14 @@ public class ControlController : MonoBehaviour
                 _pressedFramesInFireButton = framesToWait.Value;
             }
         }
-
-        if ((Input.GetAxisRaw(Global.FireAxis) > Global.Tolerance) && !_isFireAxisInUse)
+        else
         {
-            fireButtonEvent.Raise();
-            _isFireAxisInUse = true;
+            if (Input.GetAxisRaw(Global.FireAxis) > Global.Tolerance)
+            {
+                fireButtonEvent.Raise();
+                _isFireAxisInUse = true;
+            }
         }
+        
     }
 }

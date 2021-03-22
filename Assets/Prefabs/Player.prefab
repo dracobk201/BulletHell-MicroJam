@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 198430032967500616}
   - component: {fileID: 198430032967500622}
+  - component: {fileID: 8865183664089949327}
   - component: {fileID: 198430032967500621}
+  - component: {fileID: 1994111532899442300}
+  - component: {fileID: 7498673806691400656}
   - component: {fileID: 1312099003618829871}
   m_Layer: 0
   m_Name: Player
@@ -50,10 +53,34 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: {x: 0, y: 0}
     _variable: {fileID: 11400000, guid: d6c9da53a12f3c34e8c0eb608fc5f8d5, type: 2}
+  cameraAxis:
+    _useConstant: 0
+    _constantValue: {x: 0, y: 0, z: 0}
+    _variable: {fileID: 11400000, guid: a90f83bea92960640b51f6505174deb9, type: 2}
   playerMoveSpeed:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 8176babd21e4e3d42a1132eadcf73237, type: 2}
+  damping:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b2bc9205cf1ad20479b9ddc068c04a4c, type: 2}
+  transformToRotate: {fileID: 599903399812542865}
+--- !u!114 &8865183664089949327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198430032967500620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abd6f39b1663324398e922006c9036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
+  playerShot: {fileID: 11400000, guid: 9aeab12bd0e79b64a83b6ca3db2ee092, type: 2}
+  bulletInitialTransform: {fileID: 3169685488351796700}
 --- !u!114 &198430032967500621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +104,70 @@ MonoBehaviour:
       - m_Target: {fileID: 198430032967500622}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: Move
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1994111532899442300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198430032967500620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 07dd100348d74d8459be0c621387a0a4, type: 2}
+  _event: {fileID: 11400000, guid: 07dd100348d74d8459be0c621387a0a4, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198430032967500622}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7498673806691400656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198430032967500620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _event: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8865183664089949327}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: ShootBullet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -112,6 +203,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1823759359244322831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3169685488351796700}
+  m_Layer: 0
+  m_Name: Bullet Initial Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3169685488351796700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823759359244322831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.35, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 599903399812542865}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3452132856515136271
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +260,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 3169685488351796700}
   m_Father: {fileID: 198430032967500616}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
