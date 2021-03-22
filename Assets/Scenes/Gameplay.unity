@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: _previouslyRegisteredEvent
       value: 
       objectReference: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+    - target: {fileID: 9068407754407973745, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
 --- !u!1 &237114677
@@ -1894,7 +1898,7 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
   _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
   _response:
     m_PersistentCalls:
@@ -2311,7 +2315,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 737454175fbef3b41ad31fa1f83177c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -14,7 +14,10 @@ public class Bullet : MonoBehaviour
         TryGetComponent(out Rigidbody2D bulletRigidbody2D);
         StartCoroutine(AutoDestruction());
         bulletRigidbody2D.velocity = Vector2.zero;
-        bulletRigidbody2D.AddForce(transform.up * bulletVelocity.Value, ForceMode2D.Impulse);
+        float velocityMultiplier = 1;
+        if (gameObject.tag.Equals(Global.EnemyBulletTag))
+            velocityMultiplier = 0.6f;
+        bulletRigidbody2D.AddForce(transform.up * bulletVelocity.Value * velocityMultiplier, ForceMode2D.Impulse);
     }
 
     private void Destroy()
