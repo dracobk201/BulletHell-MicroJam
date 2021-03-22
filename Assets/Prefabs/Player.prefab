@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 198430032967500621}
   - component: {fileID: 1994111532899442300}
   - component: {fileID: 7498673806691400656}
+  - component: {fileID: 3384654958231842132}
   - component: {fileID: 1312099003618829871}
   m_Layer: 0
   m_Name: Player
@@ -187,6 +188,50 @@ MonoBehaviour:
       - m_Target: {fileID: 8865183664089949327}
         m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
         m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3384654958231842132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198430032967500620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198430032967500622}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8865183664089949327}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: PlayerIsDead
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

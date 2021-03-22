@@ -9,15 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FloatReference playerMoveSpeed = default(FloatReference);
     [SerializeField] private Transform transformToRotate = default(Transform);
     private Camera _gameCamera;
+    private bool _playerIsDead;
 
     private void Awake()
     {
         _gameCamera = Camera.main;
+        _playerIsDead = false;
     }
 
     public void Move()
     {
-        var dualDirectionMultiplier = (movementAxis.Value.x != 0 && movementAxis.Value.y != 0) ? 0.4f : 1;
+        if (_playerIsDead) return;
+        var dualDirectionMultiplier = (movementAxis.Value.x != 0 && movementAxis.Value.y != 0) ? 0.6f : 1;
         float newstraffe = movementAxis.Value.x * playerMoveSpeed.Value * dualDirectionMultiplier * Time.deltaTime;
         float newtranslation = movementAxis.Value.y * playerMoveSpeed.Value * dualDirectionMultiplier * Time.deltaTime;
         transform.Translate(newstraffe, newtranslation, 0);
@@ -25,7 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rotate()
     {
+        if (_playerIsDead) return;
         Vector3 mouseWorld = _gameCamera.ScreenToWorldPoint(cameraAxis.Value);
         transformToRotate.up = new Vector2(mouseWorld.x, mouseWorld.y) - new Vector2(transform.position.x, transform.position.y);
+    }
+
+    public void PlayerIsDead()
+    {
+        _playerIsDead = true;
     }
 }

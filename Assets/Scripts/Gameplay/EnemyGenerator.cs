@@ -7,11 +7,13 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
     [SerializeField] private FloatReference timeToSpawn = default(FloatReference);
     [SerializeField] private GameEvent shipSpawned = default(GameEvent);
+    private bool _playerIsDead;
     private float _actualTimeToSpawn;
 
     private void Start()
     {
         _actualTimeToSpawn = timeToSpawn.Value;
+        _playerIsDead = false;
     }
 
     private void Update()
@@ -26,6 +28,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Spawn()
     {
+        if (_playerIsDead) return;
         var initialPosition = new Vector2(Random.Range(-4.5f, 4.5f), Random.Range(-4.5f, 4.5f));
 
         for (int i = 0; i < enemyShips.Count; i++)
@@ -38,5 +41,10 @@ public class EnemyGenerator : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void PlayerIsDead()
+    {
+        _playerIsDead = true;
     }
 }

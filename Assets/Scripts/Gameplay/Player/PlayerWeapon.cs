@@ -6,11 +6,17 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObjectCollection playerBullets = default(GameObjectCollection);
     [SerializeField] private GameEvent playerShot = default(GameEvent);
     [SerializeField] private Transform bulletInitialTransform = default(Transform);
+    private bool _playerIsDead;
     private bool _shooting;
+
+    private void Start()
+    {
+        _playerIsDead = false;
+    }
 
     public void ShootBullet()
     {
-        if (_shooting) return;
+        if (_shooting || _playerIsDead) return;
         _shooting = true;
         var initialPosition = bulletInitialTransform.position;
         var initialRotation = bulletInitialTransform.rotation;
@@ -27,5 +33,10 @@ public class PlayerWeapon : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void PlayerIsDead()
+    {
+        _playerIsDead = true;
     }
 }
