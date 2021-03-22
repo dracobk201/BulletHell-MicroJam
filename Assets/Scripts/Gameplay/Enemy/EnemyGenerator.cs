@@ -12,6 +12,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Start()
     {
+        enemiesKilled.Value = 0;
         _actualTimeToSpawn = timeToSpawn.Value;
         _playerIsDead = false;
     }

@@ -22,7 +22,7 @@ public class ControlController : MonoBehaviour
     private bool _isFireAxisInUse;
     private int _pressedFramesInFireButton;
 
-    private void Awake()
+    private void Start()
     {
         _pressedFramesInFireButton = framesToWait.Value;
     }

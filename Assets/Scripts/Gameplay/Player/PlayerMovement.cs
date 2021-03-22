@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera _gameCamera;
     private bool _playerIsDead;
 
-    private void Awake()
+    private void Start()
     {
         _gameCamera = Camera.main;
         _playerIsDead = false;
