@@ -3,6 +3,7 @@ using ScriptableObjectArchitecture;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private IntReference playerMaxLife = default(IntReference);
     [SerializeField] private IntReference playerActualLife = default(IntReference);
     [SerializeField] private GameEvent playerImpacted = default(GameEvent);
@@ -21,7 +22,10 @@ public class PlayerHealth : MonoBehaviour
             playerActualLife.Value--;
             playerImpacted.Raise();
             if (playerActualLife.Value <= 0)
+            {
+                isGameStarted.Value = false;
                 playerDead.Raise();
+            }
         }
     }
 }

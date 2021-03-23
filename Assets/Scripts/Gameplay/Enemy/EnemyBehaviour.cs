@@ -6,7 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
     private BoxCollider2D _enemyCollider;
 
-    private void Start()
+    private void Awake()
     {
         TryGetComponent(out BoxCollider2D targetCollider);
         _enemyCollider = targetCollider;

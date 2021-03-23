@@ -63,6 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f9df7dcdb684747b299b4e90f46247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
   enemyBullets: {fileID: 11400000, guid: 5625e312d6e5f1844a3f6d1793018a0a, type: 2}
   timeToShoot:
     _useConstant: 0

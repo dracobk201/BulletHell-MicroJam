@@ -3,6 +3,7 @@ using ScriptableObjectArchitecture;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private GameObjectCollection playerBullets = default(GameObjectCollection);
     [SerializeField] private GameEvent playerShot = default(GameEvent);
     [SerializeField] private Transform bulletInitialTransform = default(Transform);
@@ -16,7 +17,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void ShootBullet()
     {
-        if (_shooting || _playerIsDead) return;
+        if (_shooting || _playerIsDead || !isGameStarted.Value) return;
         _shooting = true;
         var initialPosition = bulletInitialTransform.position;
         var initialRotation = bulletInitialTransform.rotation;

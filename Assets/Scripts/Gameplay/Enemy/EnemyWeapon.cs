@@ -3,6 +3,7 @@ using ScriptableObjectArchitecture;
 
 public class EnemyWeapon : MonoBehaviour
 {
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private GameObjectCollection enemyBullets = default(GameObjectCollection);
     [SerializeField] private FloatReference timeToShoot = default(FloatReference);
     [SerializeField] private GameEvent enemyShot = default(GameEvent);
@@ -10,8 +11,9 @@ public class EnemyWeapon : MonoBehaviour
     private bool _shooting;
     private float _currentTimeToShoot;
 
-    private void Start()
+    private void Awake()
     {
+        _shooting = false;
         _currentTimeToShoot = timeToShoot.Value + Random.Range(0,2f);
     }
 
@@ -27,7 +29,7 @@ public class EnemyWeapon : MonoBehaviour
 
     public void ShootBullet()
     {
-        if (_shooting) return;
+        if (_shooting || !isGameStarted.Value) return;
         _shooting = true;
 
         for (int i = 0; i < bulletInitialTransforms.Length; i++)
@@ -48,6 +50,5 @@ public class EnemyWeapon : MonoBehaviour
                 }
             }
         }
-        
     }
 }

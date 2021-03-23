@@ -4,6 +4,7 @@ using ScriptableObjectArchitecture;
 public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] private GameObjectCollection enemyShips = default(GameObjectCollection);
+    [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
     [SerializeField] private FloatReference timeToSpawn = default(FloatReference);
     [SerializeField] private GameEvent shipSpawned = default(GameEvent);
@@ -29,7 +30,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Spawn()
     {
-        if (_playerIsDead) return;
+        if (_playerIsDead || !isGameStarted.Value) return;
         var initialPosition = new Vector2(Random.Range(-4.5f, 4.5f), Random.Range(-4.5f, 4.5f));
 
         for (int i = 0; i < enemyShips.Count; i++)
