@@ -12,6 +12,8 @@ public class SetNameCanvasActions : MonoBehaviour
     public void Awake()
     {
         isGameStarted.Value = false;
+        if (!string.IsNullOrEmpty(playfabUsername.Value.Trim()))
+            usernameInputField.text = playfabUsername.Value;
     }
 
     public void StartGame()
