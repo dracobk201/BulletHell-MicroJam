@@ -24,7 +24,7 @@ public class EnemyGenerator : MonoBehaviour
         if (_actualTimeToSpawn <= 0)
         {
             Spawn();
-            _actualTimeToSpawn = timeToSpawn.Value - (enemiesKilled.Value * 0.01f);
+            _actualTimeToSpawn = Mathf.Clamp(timeToSpawn.Value - (enemiesKilled.Value * 0.02f), 0, Mathf.Infinity);
         }
     }
 

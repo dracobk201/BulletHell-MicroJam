@@ -15,7 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnEnable()
     {
         transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        LeanTween.scale(gameObject, Vector3.one, 2f)
+        LeanTween.scale(gameObject, Vector3.one, 1f)
             .setOnStart(() => _enemyCollider.enabled = false)
             .setEase(LeanTweenType.easeInExpo)
             .setOnComplete(() => _enemyCollider.enabled = true);
@@ -26,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
         transform.localScale = Vector3.one;
         LeanTween.scale(gameObject, Vector3.zero, 0.5f)
             .setOnStart(() => _enemyCollider.enabled = false)
-            .setEase(LeanTweenType.easeInExpo)
+            .setEase(LeanTweenType.easeInElastic)
             .setOnComplete(() => gameObject.SetActive(false));
     }
 

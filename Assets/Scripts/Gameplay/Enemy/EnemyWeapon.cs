@@ -5,6 +5,7 @@ public class EnemyWeapon : MonoBehaviour
 {
     [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private GameObjectCollection enemyBullets = default(GameObjectCollection);
+    [SerializeField] private IntReference enemiesKilled = default(IntReference);
     [SerializeField] private FloatReference timeToShoot = default(FloatReference);
     [SerializeField] private GameEvent enemyShot = default(GameEvent);
     [SerializeField] private Transform[] bulletInitialTransforms = default(Transform[]);
@@ -14,7 +15,7 @@ public class EnemyWeapon : MonoBehaviour
     private void Awake()
     {
         _shooting = false;
-        _currentTimeToShoot = timeToShoot.Value + Random.Range(0,2f);
+        _currentTimeToShoot = timeToShoot.Value + Random.Range(0.6f, 1.5f);
     }
 
     private void Update()
@@ -23,7 +24,7 @@ public class EnemyWeapon : MonoBehaviour
         if (_currentTimeToShoot <= 0)
         {
             ShootBullet();
-            _currentTimeToShoot = timeToShoot.Value;
+            _currentTimeToShoot = Mathf.Clamp(timeToShoot.Value - (enemiesKilled.Value * 0.005f), 0, Mathf.Infinity);
         }
     }
 
