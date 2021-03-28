@@ -51,6 +51,8 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 355e74e63bd89d34587293192cb34e4c, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  enemyDeathAudio: {fileID: 8300000, guid: bf231b2318729fb43a86eeea842f9bda, type: 3}
 --- !u!114 &1594611945546234215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,16 +70,21 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
   enemyBullets: {fileID: 11400000, guid: 5625e312d6e5f1844a3f6d1793018a0a, type: 2}
+  enemiesKilled:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 0}
   timeToShoot:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 11f3ca28d64c38643aa5fecfce04b3be, type: 2}
-  enemyShot: {fileID: 11400000, guid: 28e66dfacca0eaf44b104df96d78e8db, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
   bulletInitialTransforms:
   - {fileID: 8856062886286495443}
   - {fileID: 3221434693858588507}
   - {fileID: 6030276922421376151}
   - {fileID: 8663743729131216130}
+  enemyShootingAudio: {fileID: 8300000, guid: 248c774454bd1ab46a3c68e2e5e6cb5d, type: 3}
 --- !u!61 &4299231549817446865
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
     [SerializeField] private FloatReference timeToSpawn = default(FloatReference);
     [SerializeField] private GameEvent shipSpawned = default(GameEvent);
+    [SerializeField] private AudioClipGameEvent bgmToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip bgmAudio = default(AudioClip);
     private bool _playerIsDead;
     private float _actualTimeToSpawn;
 
@@ -16,6 +18,7 @@ public class EnemyGenerator : MonoBehaviour
         enemiesKilled.Value = 0;
         _actualTimeToSpawn = timeToSpawn.Value;
         _playerIsDead = false;
+        bgmToPlay.Raise(bgmAudio);
     }
 
     private void Update()

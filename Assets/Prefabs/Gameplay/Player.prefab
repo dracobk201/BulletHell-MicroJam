@@ -86,8 +86,9 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
   playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
-  playerShot: {fileID: 11400000, guid: 9aeab12bd0e79b64a83b6ca3db2ee092, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
   bulletInitialTransform: {fileID: 3169685488351796700}
+  playerShootingAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
 --- !u!114 &4386641210086109277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,8 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: c660787b18bff49479e2659e648abdc0, type: 2}
   playerImpacted: {fileID: 11400000, guid: 4d6157130ee3b5f4eae1e974d16cf6b3, type: 2}
   playerDead: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  playerDeadAudio: {fileID: 8300000, guid: 0e6c7cf4fafb5ee468a252ca20a3bd9b, type: 3}
 --- !u!114 &198430032967500621
 MonoBehaviour:
   m_ObjectHideFlags: 0

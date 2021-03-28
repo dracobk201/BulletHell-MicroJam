@@ -4,6 +4,9 @@ using ScriptableObjectArchitecture;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip enemyDeathAudio = default(AudioClip);
+
     private BoxCollider2D _enemyCollider;
 
     private void Awake()
@@ -36,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (targetTag.Equals(Global.PlayerBulletTag) || targetTag.Equals(Global.PlayerTag))
         {
             enemiesKilled.Value++;
+            sfxToPlay.Raise(enemyDeathAudio);
             Destroy();
         }
     }

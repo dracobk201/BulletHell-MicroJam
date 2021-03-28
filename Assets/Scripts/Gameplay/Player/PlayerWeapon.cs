@@ -5,8 +5,9 @@ public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private GameObjectCollection playerBullets = default(GameObjectCollection);
-    [SerializeField] private GameEvent playerShot = default(GameEvent);
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
     [SerializeField] private Transform bulletInitialTransform = default(Transform);
+    [SerializeField] private AudioClip playerShootingAudio = default(AudioClip);
     private bool _playerIsDead;
     private bool _shooting;
 
@@ -29,7 +30,7 @@ public class PlayerWeapon : MonoBehaviour
                 playerBullets[i].transform.localPosition = initialPosition;
                 playerBullets[i].transform.localRotation = initialRotation;
                 playerBullets[i].SetActive(true);
-                playerShot.Raise();
+                sfxToPlay.Raise(playerShootingAudio);
                 _shooting = false;
                 break;
             }

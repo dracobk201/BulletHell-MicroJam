@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private IntReference playerActualLife = default(IntReference);
     [SerializeField] private GameEvent playerImpacted = default(GameEvent);
     [SerializeField] private GameEvent playerDead = default(GameEvent);
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip playerDeadAudio = default(AudioClip);
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
             if (playerActualLife.Value <= 0)
             {
                 isGameStarted.Value = false;
+                sfxToPlay.Raise(playerDeadAudio);
                 playerDead.Raise();
             }
         }

@@ -350,6 +350,8 @@ MonoBehaviour:
   currentLeaderboard: {fileID: 11400000, guid: 3f289febda56c9144a1fd535738704e2, type: 2}
   enemyKilledLabel: {fileID: 6264280597870971726}
   leaderboardText: {fileID: 3167528881411652278}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  uIConfirmAudio: {fileID: 8300000, guid: c4e4b28a45931fa4f96c0465ebe83d74, type: 3}
 --- !u!114 &6264280597339037987
 MonoBehaviour:
   m_ObjectHideFlags: 0

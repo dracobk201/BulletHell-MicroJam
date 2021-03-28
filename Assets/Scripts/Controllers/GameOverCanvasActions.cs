@@ -9,6 +9,8 @@ public class GameOverCanvasActions : MonoBehaviour
     [SerializeField] private StringCollection currentLeaderboard = default(StringCollection);
     [SerializeField] private TextMeshProUGUI enemyKilledLabel = default(TextMeshProUGUI);
     [SerializeField] private TextMeshProUGUI leaderboardText = default(TextMeshProUGUI);
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
+    [SerializeField] private AudioClip uIConfirmAudio = default(AudioClip);
 
     public void ShowGameOver()
     {
@@ -28,6 +30,7 @@ public class GameOverCanvasActions : MonoBehaviour
 
     public void RestartLevel()
     {
+        sfxToPlay.Raise(uIConfirmAudio);
         SceneManager.LoadScene(0);
     }
 }

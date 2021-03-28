@@ -527,6 +527,8 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 0e6dba41ccf7bf14186b7e68e15ed48b, type: 2}
   shipSpawned: {fileID: 11400000, guid: 048f13d56455eb84aae474ff4c32f861, type: 2}
+  bgmToPlay: {fileID: 11400000, guid: 4a0217cf3ef238d4ca104a5a1c68e1ce, type: 2}
+  bgmAudio: {fileID: 8300000, guid: 80b42677a46625846a85dcd652cffbaa, type: 3}
 --- !u!114 &8559535527264981526
 MonoBehaviour:
   m_ObjectHideFlags: 0

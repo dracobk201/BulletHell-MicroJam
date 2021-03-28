@@ -7,8 +7,9 @@ public class EnemyWeapon : MonoBehaviour
     [SerializeField] private GameObjectCollection enemyBullets = default(GameObjectCollection);
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
     [SerializeField] private FloatReference timeToShoot = default(FloatReference);
-    [SerializeField] private GameEvent enemyShot = default(GameEvent);
+    [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
     [SerializeField] private Transform[] bulletInitialTransforms = default(Transform[]);
+    [SerializeField] private AudioClip enemyShootingAudio = default(AudioClip);
     private bool _shooting;
     private float _currentTimeToShoot;
 
@@ -45,7 +46,7 @@ public class EnemyWeapon : MonoBehaviour
                     enemyBullets[j].transform.localPosition = initialPosition;
                     enemyBullets[j].transform.localRotation = initialRotation;
                     enemyBullets[j].SetActive(true);
-                    enemyShot.Raise();
+                    sfxToPlay.Raise(enemyShootingAudio);
                     _shooting = false;
                     break;
                 }
