@@ -4,10 +4,8 @@ using ScriptableObjectArchitecture;
 public class ScreenshakeController : MonoBehaviour
 {
     [SerializeField] private FloatReference lowShakeMagnitude = default(FloatReference);
-    [SerializeField] private FloatReference mediumShakeMagnitude = default(FloatReference);
     [SerializeField] private FloatReference heavyShakeMagnitude = default(FloatReference);
     [SerializeField] private FloatReference lowShakeDuration = default(FloatReference);
-    [SerializeField] private FloatReference mediumShakeDuration = default(FloatReference);
     [SerializeField] private FloatReference heavyShakeDuration = default(FloatReference);
     [SerializeField] private FloatReference shakeDampingSpeed = default(FloatReference);
     private float _shakeDuration;
@@ -39,12 +37,6 @@ public class ScreenshakeController : MonoBehaviour
     {
         _shakeDuration = lowShakeDuration.Value;
         _shakeMagnitude = lowShakeMagnitude.Value;
-    }
-
-    public void TriggerMediumShake()
-    {
-        _shakeDuration = mediumShakeDuration.Value;
-        _shakeMagnitude = mediumShakeMagnitude.Value;
     }
 
     public void TriggerHardShake()

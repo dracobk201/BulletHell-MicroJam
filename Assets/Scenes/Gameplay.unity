@@ -186,10 +186,18 @@ PrefabInstance:
       propertyPath: _previouslyRegisteredEvent
       value: 
       objectReference: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+    - target: {fileID: 6149462505696300698, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
+      propertyPath: _previouslyRegisteredEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 0043c59268e6f224dab2065ece529c95, type: 2}
     - target: {fileID: 6921197743802006872, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
       propertyPath: _previouslyRegisteredEvent
       value: 
       objectReference: {fileID: 11400000, guid: 5122ad15c0145e04dbf0bfe4cb310c34, type: 2}
+    - target: {fileID: 8734736045816173583, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
+      propertyPath: _previouslyRegisteredEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3db0b8d143deb124f88edcf29516fa80, type: 2}
     - target: {fileID: 9068407754407973745, guid: f7ebc919cd254354c814e450df90f59b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -277,6 +285,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420035}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -314,7 +323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: ScreenshakeController, Assembly-CSharp
-        m_MethodName: TriggerMediumShake
+        m_MethodName: TriggerSimpleShake
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -397,10 +406,6 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 7d453067ddf9aed4da1836b06ee5095a, type: 2}
-  mediumShakeMagnitude:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: cd9d44c992a726e4f8cec0c56e7bf2c6, type: 2}
   heavyShakeMagnitude:
     _useConstant: 0
     _constantValue: 0
@@ -409,10 +414,6 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: e6b9fd9c8954bff499ca8e5e9f6eefef, type: 2}
-  mediumShakeDuration:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: ce24f45ca18eec94dbd9c68db4080331, type: 2}
   heavyShakeDuration:
     _useConstant: 0
     _constantValue: 0
@@ -436,7 +437,7 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
   _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
   _response:
     m_PersistentCalls:
@@ -468,7 +469,7 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 94425c535b34e1d478d196ac89fcd49b, type: 2}
   _event: {fileID: 11400000, guid: 94425c535b34e1d478d196ac89fcd49b, type: 2}
   _response:
     m_PersistentCalls:
@@ -485,6 +486,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &330540680567573047
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,10 @@ public class Global
     public const string VerticalAxis = "Vertical";
     public const string MouseVerticalAxis = "Mouse X";
     public const string MouseHorizontalAxis = "Mouse Y";
+    public const string RightStickVerticalAxis = "Vertical Right Stick";
+    public const string RightStickHorizontalAxis = "Horizontal Right Stick";
     public const string FireAxis = "Fire1";
+    public const string DashAxis = "Dash";
     #endregion
 
     #region Constants

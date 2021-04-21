@@ -49,17 +49,15 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: d6c9da53a12f3c34e8c0eb608fc5f8d5, type: 2}
   anyMovementAxisEvent: {fileID: 11400000, guid: 7385231e07876194aa9100b9221880f4, type: 2}
   nonMovementAxisEvent: {fileID: 11400000, guid: d58df7b77a2a81b47bbd3fc01fdf0866, type: 2}
-  cameraAxis:
+  rotationAxis:
     _useConstant: 0
     _constantValue: {x: 0, y: 0, z: 0}
     _variable: {fileID: 11400000, guid: a90f83bea92960640b51f6505174deb9, type: 2}
-  anyCameraAxisEvent: {fileID: 11400000, guid: 07dd100348d74d8459be0c621387a0a4, type: 2}
-  nonCameraAxisEvent: {fileID: 11400000, guid: 4b5fd7ee7e8e6834d81d83199faa013a, type: 2}
-  framesToWait:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: b0983f89a47604e46adde59c0fb1f07c, type: 2}
+  mouseRotationAxisEvent: {fileID: 11400000, guid: 07dd100348d74d8459be0c621387a0a4, type: 2}
+  joystickRotationAxisEvent: {fileID: 11400000, guid: 0043c59268e6f224dab2065ece529c95, type: 2}
+  nonRotationAxisEvent: {fileID: 11400000, guid: 4b5fd7ee7e8e6834d81d83199faa013a, type: 2}
   fireButtonEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  dashButtonEvent: {fileID: 11400000, guid: 3db0b8d143deb124f88edcf29516fa80, type: 2}
 --- !u!1 &330540680033047950
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3417c9a06eae9d04c9236c0474a8364d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offlineMode:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 4fb15626b61bd2a46a0df8878107ae76, type: 2}
   enemiesKilled:
     _useConstant: 0
     _constantValue: 0

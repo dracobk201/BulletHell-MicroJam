@@ -73,7 +73,7 @@ MonoBehaviour:
   enemiesKilled:
     _useConstant: 0
     _constantValue: 0
-    _variable: {fileID: 0}
+    _variable: {fileID: 11400000, guid: 355e74e63bd89d34587293192cb34e4c, type: 2}
   timeToShoot:
     _useConstant: 0
     _constantValue: 0

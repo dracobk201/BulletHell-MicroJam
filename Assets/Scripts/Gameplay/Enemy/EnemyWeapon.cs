@@ -21,6 +21,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private void Update()
     {
+        RotativeShoot();
         _currentTimeToShoot -= Time.deltaTime;
         if (_currentTimeToShoot <= 0)
         {
@@ -52,5 +53,10 @@ public class EnemyWeapon : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void RotativeShoot()
+    {
+        transform.Rotate(0, 0, 10);
     }
 }

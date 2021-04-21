@@ -11,21 +11,15 @@ public class ControlController : MonoBehaviour
     private bool _isVerticalMovementAxisInUse;
     private bool _isHorizontalMovementAxisInUse;
 
-    [Header("Camera Variables")]
-    [SerializeField] private Vector3Reference cameraAxis = default(Vector3Reference);
-    [SerializeField] private GameEvent anyCameraAxisEvent = default(GameEvent);
-    [SerializeField] private GameEvent nonCameraAxisEvent = default(GameEvent);
+    [Header("Rotation Variables")]
+    [SerializeField] private Vector3Reference rotationAxis = default(Vector3Reference);
+    [SerializeField] private GameEvent mouseRotationAxisEvent = default(GameEvent);
+    [SerializeField] private GameEvent joystickRotationAxisEvent = default(GameEvent);
+    [SerializeField] private GameEvent nonRotationAxisEvent = default(GameEvent);
 
     [Header("Buttons Variables")]
-    [SerializeField] private IntReference framesToWait = default(IntReference);
     [SerializeField] private GameEvent fireButtonEvent = default(GameEvent);
-    private bool _isFireAxisInUse;
-    private int _pressedFramesInFireButton;
-
-    private void Start()
-    {
-        _pressedFramesInFireButton = framesToWait.Value;
-    }
+    [SerializeField] private GameEvent dashButtonEvent = default(GameEvent);
 
     private void Update()
     {
@@ -33,7 +27,9 @@ public class ControlController : MonoBehaviour
         CheckingHorizontalMovementAxis();
         CheckingNonMovementAxis();
         CheckingMouseAxis();
+        CheckingRightStickAxis();
         CheckingFireButton();
+        CheckingDashButton();
     }
 
     #region Vertical Movement Actions
@@ -88,29 +84,40 @@ public class ControlController : MonoBehaviour
 
     #endregion
 
-    #region Camera Actions
+    #region Rotation Keyboard Actions
 
     private void CheckingMouseAxis()
     {
         var mouseVerticalValue = Input.GetAxis(Global.MouseVerticalAxis);
-        var horizontalCameraValue = Input.GetAxis(Global.MouseVerticalAxis);
+        var mouseHorizontalValue = Input.GetAxis(Global.MouseVerticalAxis);
 
-        if (Math.Abs(mouseVerticalValue) > Global.Tolerance || Math.Abs(horizontalCameraValue) > Global.Tolerance)
-            PerformCameraActions();
+        if (Math.Abs(mouseVerticalValue) > Global.Tolerance || Math.Abs(mouseHorizontalValue) > Global.Tolerance)
+        {
+            rotationAxis.Value = Input.mousePosition;
+            mouseRotationAxisEvent.Raise();
+        }
         else
-            NoCameraActions();
+            NoRotationActions();
     }
 
-    private void PerformCameraActions()
+    private void CheckingRightStickAxis()
     {
-        cameraAxis.Value = Input.mousePosition;
-        anyCameraAxisEvent.Raise();
+        var rightStickVerticalValue = Input.GetAxis(Global.RightStickVerticalAxis);
+        var rightStickHorizontalValue = Input.GetAxis(Global.RightStickHorizontalAxis);
+
+        if (Math.Abs(rightStickVerticalValue) > Global.Tolerance || Math.Abs(rightStickHorizontalValue) > Global.Tolerance) 
+        {
+            rotationAxis.Value = new Vector2(rightStickHorizontalValue, rightStickVerticalValue);
+            joystickRotationAxisEvent.Raise();
+        }
+        else
+            NoRotationActions();
     }
 
-    private void NoCameraActions()
+    private void NoRotationActions()
     {
-        cameraAxis.Value = new Vector2(0, 0);
-        nonCameraAxisEvent.Raise();
+        rotationAxis.Value = new Vector2(0, 0);
+        nonRotationAxisEvent.Raise();
     }
 
     #endregion
@@ -123,23 +130,13 @@ public class ControlController : MonoBehaviour
 
     private void CheckingFireButton()
     {
-        if (_isFireAxisInUse)
-        {
-            _pressedFramesInFireButton--;
-            if (_pressedFramesInFireButton < 0)
-            {
-                _isFireAxisInUse = false;
-                _pressedFramesInFireButton = framesToWait.Value;
-            }
-        }
-        else
-        {
-            if (Input.GetAxisRaw(Global.FireAxis) > Global.Tolerance)
-            {
-                fireButtonEvent.Raise();
-                _isFireAxisInUse = true;
-            }
-        }
-        
+        if (Input.GetAxisRaw(Global.FireAxis) > Global.Tolerance)
+            fireButtonEvent.Raise();
+    }
+
+    private void CheckingDashButton()
+    {
+        if (Input.GetAxisRaw(Global.DashAxis) > Global.Tolerance)
+            dashButtonEvent.Raise();
     }
 }
