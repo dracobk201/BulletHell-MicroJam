@@ -6,10 +6,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private BoolReference isGameStarted = default(BoolReference);
     [SerializeField] private IntReference playerMaxLife = default(IntReference);
     [SerializeField] private IntReference playerActualLife = default(IntReference);
+    [SerializeField] private IntReference healthDropAmount = default(IntReference);
     [SerializeField] private GameEvent playerImpacted = default(GameEvent);
     [SerializeField] private GameEvent playerDead = default(GameEvent);
     [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
     [SerializeField] private AudioClip playerDeadAudio = default(AudioClip);
+    [SerializeField] private AudioClip playerHealAudio = default(AudioClip);
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         string targetTag = other.tag;
+        print(targetTag);
         if (targetTag.Equals(Global.EnemyBulletTag) || targetTag.Equals(Global.EnemyTag))
         {
             playerActualLife.Value--;
@@ -29,6 +32,11 @@ public class PlayerHealth : MonoBehaviour
                 sfxToPlay.Raise(playerDeadAudio);
                 playerDead.Raise();
             }
+        }
+        else if (targetTag.Equals(Global.HealthDropTag))
+        {
+            playerActualLife.Value = Mathf.Clamp(playerActualLife.Value + healthDropAmount.Value, 0, playerMaxLife.Value);
+            sfxToPlay.Raise(playerHealAudio);
         }
     }
 }

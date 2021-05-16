@@ -3,9 +3,12 @@ using ScriptableObjectArchitecture;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObjectCollection healthDrops = default(GameObjectCollection);
     [SerializeField] private IntReference enemiesKilled = default(IntReference);
+    [SerializeField] private FloatReference dropPosibility = default(FloatReference);
     [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
     [SerializeField] private AudioClip enemyDeathAudio = default(AudioClip);
+    [SerializeField] private AudioClip dropSpawnedAudio = default(AudioClip);
 
     private BoxCollider2D _enemyCollider;
 
@@ -40,7 +43,26 @@ public class EnemyBehaviour : MonoBehaviour
         {
             enemiesKilled.Value++;
             sfxToPlay.Raise(enemyDeathAudio);
+            DropObject();
             Destroy();
+        }
+    }
+
+    private void DropObject()
+    {
+        var probability = Random.value;
+        if (probability <= dropPosibility.Value)
+        {
+            for (int i = 0; i < healthDrops.Count; i++)
+            {
+                if (!healthDrops[i].activeInHierarchy)
+                {
+                    healthDrops[i].transform.localPosition = transform.position;
+                    healthDrops[i].SetActive(true);
+                    sfxToPlay.Raise(dropSpawnedAudio);
+                    break;
+                }
+            }
         }
     }
 }

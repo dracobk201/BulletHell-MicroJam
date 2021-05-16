@@ -30,6 +30,7 @@ Transform:
   - {fileID: 1778572172914189453}
   - {fileID: 6868637677354725153}
   - {fileID: 8666095094390005320}
+  - {fileID: 126183490107865628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,6 +83,55 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: acc4b8f6222a9ad478ce3e1a027b9a09, type: 2}
   playerBulletPrefab: {fileID: 6060591035992373632, guid: 8eb74123a6bdc0a469fbf1d48d8a9235, type: 3}
+--- !u!1 &2922313566471100366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 126183490107865628}
+  - component: {fileID: 4272577999631891321}
+  m_Layer: 0
+  m_Name: Health Drops Magazine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &126183490107865628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922313566471100366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1778572172758395981}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4272577999631891321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922313566471100366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2297fd720e3be554fac704c1258ad6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthDrops: {fileID: 11400000, guid: 14ce78d2dcb9a0b40bf5a255b4680f33, type: 2}
+  healthDropsPool:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 0cb5a44e28557a441a72a7a6b641133c, type: 2}
+  healthDropPrefab: {fileID: 3629477261833012456, guid: 8f0250bc493d4d54ca118686b5b3885e, type: 3}
 --- !u!1 &3916910349632198259
 GameObject:
   m_ObjectHideFlags: 0

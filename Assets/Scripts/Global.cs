@@ -5,6 +5,7 @@ public class Global
     public const string EnemyTag = "Enemy";
     public const string PlayerBulletTag = "PlayerBullet";
     public const string EnemyBulletTag = "EnemyBullet";
+    public const string HealthDropTag = "HealthDrop";
     #endregion
 
     #region Axis

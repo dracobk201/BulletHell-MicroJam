@@ -47,12 +47,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38439ef39cd5a3b4eb324c0e08ada523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthDrops: {fileID: 11400000, guid: 14ce78d2dcb9a0b40bf5a255b4680f33, type: 2}
   enemiesKilled:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 355e74e63bd89d34587293192cb34e4c, type: 2}
+  dropPosibility:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 46b348d956d94f64db77cad533710114, type: 2}
   sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
   enemyDeathAudio: {fileID: 8300000, guid: bf231b2318729fb43a86eeea842f9bda, type: 3}
+  dropSpawnedAudio: {fileID: 8300000, guid: f013119c50fd0a14384c8190fe24e950, type: 3}
 --- !u!114 &1594611945546234215
 MonoBehaviour:
   m_ObjectHideFlags: 0
