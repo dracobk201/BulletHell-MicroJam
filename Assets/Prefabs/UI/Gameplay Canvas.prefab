@@ -77,7 +77,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 512, y: 512}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -215,6 +215,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3884455843390344035}
     m_Modifications:
+    - target: {fileID: 6174019379359097295, guid: 25fffd279a2ffba42bc9b12861042975, type: 3}
+      propertyPath: _previouslyRegisteredEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
     - target: {fileID: 6451931352933494610, guid: 25fffd279a2ffba42bc9b12861042975, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
