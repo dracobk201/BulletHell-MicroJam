@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c76231fdd4175429bde1dd18f14c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  directionLock: {fileID: 11400000, guid: e9e822df43e817e42bace412686269c2, type: 2}
   movementAxis:
     _useConstant: 0
     _constantValue: {x: 0, y: 0}

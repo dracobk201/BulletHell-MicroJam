@@ -21,7 +21,6 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         string targetTag = other.tag;
-        print(targetTag);
         if (targetTag.Equals(Global.EnemyBulletTag) || targetTag.Equals(Global.EnemyTag))
         {
             playerActualLife.Value--;
