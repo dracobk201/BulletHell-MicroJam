@@ -8,6 +8,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - HealthDrop
+  - PlayerCage
   layers:
   - Default
   - TransparentFX
