@@ -8,16 +8,19 @@ public class Bullet : MonoBehaviour
     [SerializeField] private FloatReference bulletTimeOfLife = default(FloatReference);
     [SerializeField] private GameEvent enemyImpacted = default(GameEvent);
     [SerializeField] private GameEvent playerImpacted = default(GameEvent);
-
+    private float _velocityMultiplier;
+    
     private void OnEnable()
     {
-        TryGetComponent(out Rigidbody2D bulletRigidbody2D);
         StartCoroutine(AutoDestruction());
-        bulletRigidbody2D.velocity = Vector2.zero;
-        float velocityMultiplier = 1;
+        _velocityMultiplier = 1;
         if (gameObject.tag.Equals(Global.EnemyBulletTag))
-            velocityMultiplier = 0.6f;
-        bulletRigidbody2D.AddForce(transform.up * bulletVelocity.Value * velocityMultiplier, ForceMode2D.Impulse);
+            _velocityMultiplier = 0.6f;
+    }
+
+    private void Update()
+    {
+        transform.position += transform.up * bulletVelocity.Value * _velocityMultiplier * Time.deltaTime;
     }
 
     private void Destroy()

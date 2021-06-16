@@ -35,7 +35,6 @@ namespace Assets.Scripts.Gameplay.Player
         public void Move()
         {
             //if (_playerIsDead || !isGameStarted.Value) return;
-            Debug.Log("Estoy en eso, estoy en eso");
             var dualDirectionMultiplier = movementAxis.Value.x != 0 && movementAxis.Value.y != 0 ? 0.5f : 1;
             var movementWithRestrictions = CheckRestrictions(movementAxis.Value);
             float newXPosition = movementWithRestrictions.x * playerMoveSpeed.Value * _dashValue * dualDirectionMultiplier * Time.deltaTime;

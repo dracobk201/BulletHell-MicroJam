@@ -4,38 +4,25 @@ using ScriptableObjectArchitecture;
 public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private BoolReference isGameStarted = default(BoolReference);
-    [SerializeField] private FloatReference gunCooldown = default(FloatReference);
+    [SerializeField] private FloatReference RPM = default(FloatReference);
     [SerializeField] private GameObjectCollection playerBullets = default(GameObjectCollection);
     [SerializeField] private AudioClipGameEvent sfxToPlay = default(AudioClipGameEvent);
-    [SerializeField] private Transform bulletInitialTransform = default(Transform);
     [SerializeField] private AudioClip playerShootingAudio = default(AudioClip);
     private bool _playerIsDead;
-    private bool _canShoot;
-    private float _cooldown;
+    private float _nextShot = 0;
 
     private void Start()
     {
         _playerIsDead = false;
-        _canShoot = true;
-        _cooldown = gunCooldown.Value;
-    }
-
-    private void Update()
-    {
-        _cooldown--;
-        if (_cooldown <= 0)
-        {
-            _canShoot = true;
-            _cooldown = gunCooldown.Value;
-        }
     }
 
     public void ShootBullet()
     {
-        if (!_canShoot || _playerIsDead || !isGameStarted.Value) return;
-
-        var initialPosition = bulletInitialTransform.position;
-        var initialRotation = bulletInitialTransform.rotation;
+        //if (!_canShoot || _playerIsDead || !isGameStarted.Value) return;
+        if (_playerIsDead || Time.time < _nextShot) return;
+        _nextShot = Time.time + 60 / RPM.Value;
+        var initialPosition = transform.position;
+        var initialRotation = transform.rotation;
 
         for (int i = 0; i < playerBullets.Count; i++)
         {
@@ -45,7 +32,6 @@ public class PlayerWeapon : MonoBehaviour
                 playerBullets[i].transform.localRotation = initialRotation;
                 playerBullets[i].SetActive(true);
                 sfxToPlay.Raise(playerShootingAudio);
-                _canShoot = false;
                 break;
             }
         }

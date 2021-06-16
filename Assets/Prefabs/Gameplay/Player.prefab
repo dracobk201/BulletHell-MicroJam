@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 198430032967500616}
   - component: {fileID: 198430032967500622}
-  - component: {fileID: 8865183664089949327}
   - component: {fileID: 4386641210086109277}
   - component: {fileID: 1312099003618829871}
   - component: {fileID: 7822282873753223467}
@@ -75,30 +74,6 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
   transformToRotate: {fileID: 599903399812542865}
---- !u!114 &8865183664089949327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198430032967500620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abd6f39b1663324398e922006c9036e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGameStarted:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
-  gunCooldown:
-    _useConstant: 0
-    _constantValue: 0
-    _variable: {fileID: 11400000, guid: c6c21035ace0edc4eb395dc82465f57e, type: 2}
-  playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
-  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
-  bulletInitialTransform: {fileID: 3169685488351796700}
-  playerShootingAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
 --- !u!114 &4386641210086109277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +154,126 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1100426133987770635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2463155166009267547}
+  - component: {fileID: 2034128833764444784}
+  - component: {fileID: 8540961165030181163}
+  - component: {fileID: 3683683412016752082}
+  m_Layer: 0
+  m_Name: Bullet Initial Position (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2463155166009267547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100426133987770635}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 599903399812542865}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034128833764444784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100426133987770635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abd6f39b1663324398e922006c9036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
+  RPM:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 48123d3e5fae82b4682ea8f3d21e222a, type: 2}
+  playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  playerShootingAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
+--- !u!114 &8540961165030181163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100426133987770635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _event: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2034128833764444784}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3683683412016752082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100426133987770635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2034128833764444784}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1823759359244322831
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +283,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3169685488351796700}
+  - component: {fileID: 466040086133119728}
+  - component: {fileID: 2498516026609515122}
+  - component: {fileID: 8219094468663605500}
   m_Layer: 0
   m_Name: Bullet Initial Position
   m_TagString: Untagged
@@ -204,11 +302,98 @@ Transform:
   m_GameObject: {fileID: 1823759359244322831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.35, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 599903399812542865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &466040086133119728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823759359244322831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abd6f39b1663324398e922006c9036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
+  RPM:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 48123d3e5fae82b4682ea8f3d21e222a, type: 2}
+  playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  playerShootingAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
+--- !u!114 &2498516026609515122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823759359244322831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _event: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 466040086133119728}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8219094468663605500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823759359244322831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 466040086133119728}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3296989826614711950
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +406,6 @@ GameObject:
   - component: {fileID: 1494490186616572162}
   - component: {fileID: 3829120124642943456}
   - component: {fileID: 5977271622011146907}
-  - component: {fileID: 4664560560513995920}
   - component: {fileID: 2456418039627297547}
   - component: {fileID: 1708715582061755484}
   m_Layer: 0
@@ -341,38 +525,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4664560560513995920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3296989826614711950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
-  _event: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8865183664089949327}
-        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
-        m_MethodName: ShootBullet
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2456418039627297547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,18 +547,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 198430032967500622}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: PlayerIsDead
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8865183664089949327}
-        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
         m_MethodName: PlayerIsDead
         m_Mode: 1
         m_Arguments:
@@ -478,6 +618,8 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 3169685488351796700}
+  - {fileID: 2463155166009267547}
+  - {fileID: 8944520943995038847}
   m_Father: {fileID: 198430032967500616}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -532,3 +674,123 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4680856702655176088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8944520943995038847}
+  - component: {fileID: 9022952459124149527}
+  - component: {fileID: 4724763675742849438}
+  - component: {fileID: 9087284621027967574}
+  m_Layer: 0
+  m_Name: Bullet Initial Position (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8944520943995038847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680856702655176088}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 599903399812542865}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9022952459124149527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680856702655176088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abd6f39b1663324398e922006c9036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 2ddf6892233bd244bb259f88405c3599, type: 2}
+  RPM:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 48123d3e5fae82b4682ea8f3d21e222a, type: 2}
+  playerBullets: {fileID: 11400000, guid: dc317cbce0fca7543bfcc2f929448be7, type: 2}
+  sfxToPlay: {fileID: 11400000, guid: a57358a87115dd9498896c9a914b82d3, type: 2}
+  playerShootingAudio: {fileID: 8300000, guid: 24872659afa4fab49b667d058f2d187c, type: 3}
+--- !u!114 &4724763675742849438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680856702655176088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _event: {fileID: 11400000, guid: 46b7fa2e73acd264ca8237c0090b2dec, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9022952459124149527}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9087284621027967574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680856702655176088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _event: {fileID: 11400000, guid: 67779f81cd9a3d64a80dd5545158563f, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9022952459124149527}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

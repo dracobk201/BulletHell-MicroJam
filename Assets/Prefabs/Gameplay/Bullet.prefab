@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7666899365498539525}
   - component: {fileID: 7916668026132421701}
-  - component: {fileID: 2958886106317496881}
   - component: {fileID: 7554857092126849913}
   m_Layer: 0
   m_Name: Bullet
@@ -56,27 +55,6 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: bf964a86a6861f844988935c9a20e749, type: 2}
   enemyImpacted: {fileID: 11400000, guid: 94425c535b34e1d478d196ac89fcd49b, type: 2}
   playerImpacted: {fileID: 11400000, guid: 4d6157130ee3b5f4eae1e974d16cf6b3, type: 2}
---- !u!50 &2958886106317496881
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076182692874954822}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &7554857092126849913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 5047487665360497899}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 7666899365498539525}
   m_RootOrder: 0
